@@ -48,11 +48,11 @@ body {
  */
 .masthead {
   border-bottom: 1px dashed #b5e853;
-  margin-bottom: 2rem;
   width: 90%;
   max-width: 1000px !important;
   margin: 0 auto !important;
-
+  padding:20px 0;
+  margin:0 0 40px 0
 }
 
 .masthead-brand {
