@@ -95,6 +95,9 @@ body {
  */
 .cover {
   padding: 0 1.5rem;
+  width: 90%;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
