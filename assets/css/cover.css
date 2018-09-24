@@ -41,8 +41,8 @@ body {
 
 .cover-container {
   width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
 }
 
 /*
