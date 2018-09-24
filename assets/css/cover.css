@@ -40,7 +40,9 @@ body {
 }
 
 .cover-container {
-  width:50em;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /*
@@ -49,6 +51,7 @@ body {
 .masthead {
   border-bottom: 1px dashed #b5e853;
   margin-bottom: 2rem;
+
 }
 
 .masthead-brand {
