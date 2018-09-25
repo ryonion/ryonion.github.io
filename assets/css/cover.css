@@ -33,6 +33,7 @@ a {
 
 html,
 body {
+
   height: 100%;
   background:#151515 url("../images/bkg.png") 0 0;
 /*
@@ -42,6 +43,7 @@ body {
   font-size:16px;
   line-height:1.5;
   font-family:Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace
+
 }
 
 body {
@@ -61,7 +63,6 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 
 /*
  * Header
