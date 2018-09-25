@@ -19,15 +19,18 @@
     <link rel="stylesheet" href="{{ "/assets/css/cover.css" | prepend: site.baseurl }}">
   </head>
   <body class="text-center">
-
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+	
+    <div class="cover-container d-flex h-100 mx-auto flex-column">
       <header class="masthead">
         <div class="inner">
-          <h3 class="masthead-brand text-light">Ryonion</h3>
+          <h1 class="masthead-brand">Ryonion/{{page.title | replace: " ", "_" | replace:"@","_"}}</h1>
+          <br><br>
+          <h2>{{ site.description | default: site.github.project_tagline }}</h2>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link" href="/">my_works</a>
-            <a class="nav-link" href="#">Stories</a>
+            <a class="nav-link" href="/stories">Stories</a>
             <a class="nav-link" href="/Chinese">中文</a>
+            <a class="nav-link" href="/about">About me</a></a>
           </nav>
         </div>
       </header>
@@ -46,7 +49,6 @@
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
 	  
 	  <!-- Start of CuterCounter Code -->
           <a href="http://www.cutercounter.com/" target="_blank"><img src="http://www.cutercounter.com/hit.php?id=geadxad&nd=6&style=35" border="0" alt="web counter"></a>

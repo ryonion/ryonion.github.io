@@ -3,8 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-cat: work
-title: .
+cat: story
+title: stories
+theme-img: https://www.freewordpressheaders.com/wp-content/gallery/abstract/assorted-paint-colors-abstract-header.jpg
 ---
-
-[comment]:not sure this works.
