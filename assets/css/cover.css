@@ -70,6 +70,8 @@ body {
   display: block;
 }
 
+
+
 .masthead-brand {
   margin-bottom: 0;
 }
@@ -211,6 +213,11 @@ header h2{
     font-size:18px;
     font-weight:300;
     color:#666;
+    float:left; 
+}
+
+header h5{
+    margin-top: 13px;
     float:left; 
 }
 
