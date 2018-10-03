@@ -2,7 +2,7 @@
 layout: post
 title:  "Macbook air fan noise after update fixed"
 date:   2018-09-21 14:59:09 -0700
-categories: jekyll update
+categories: [jekyll update, story] 
 ---
 Problem: the fan started making a abnormally big noise when I started to upgrade to High sierra.
 
