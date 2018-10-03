@@ -4,7 +4,7 @@
 
 layout: page
 cat: my_works
-title: .
+title: my_works
 ---
 
 [comment]:not sure this works.
