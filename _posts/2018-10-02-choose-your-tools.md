@@ -7,6 +7,7 @@ categories:
   - story
   - software
 has_tags: true
+tags: [programming language, web dev]
 ---
 
 Nowadays, there are tons of languages and softwares for beginners to choose when they try to build something. Choosing the right tools to begin can mean saving many hours and giving you motivation to finish whatever you attempt to do. 
