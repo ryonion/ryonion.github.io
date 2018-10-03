@@ -23,7 +23,7 @@
     <div class="cover-container d-flex h-100 mx-auto flex-column">
       <header class="masthead">
         <div class="inner">
-          <h1 class="masthead-brand">Ryonion{% if page.layout == "post" %}/{{page.categories[0]}}{% endif %}/{{page.title | replace: " ", "_" | replace:"@","_"}}</h1>
+          <h1 class="masthead-brand">Ryonion</h1><h5>{% if page.layout == "post" %}/{{page.categories[0]}}{% endif %}/{{page.title | replace: " ", "_" | replace:"@","_"}}</h5>
           <br><br>
           <h2>{{ site.description | default: site.github.project_tagline }}</h2>
           <nav class="nav nav-masthead justify-content-center">
