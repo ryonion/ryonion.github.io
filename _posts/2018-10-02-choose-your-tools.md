@@ -4,7 +4,7 @@ layout: post
 date: '2018-10-02 19:59:09 -0700'
 type: post
 categories:
-  - story
+  - stories
   - software
 has_tags: true
 tags: [programming language, web dev]
