@@ -12,5 +12,5 @@ It is specifically designed for Chinese Students.
 
 :zap: [live on Azure](http://13.66.192.54/rmp_uci/)
 
-![Capture.PNG]({{site.baseurl}}/_posts/Capture.PNG)
+![review_page.PNG]({{site.baseurl}}/assets/img/review_page.PNG)
 
