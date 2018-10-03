@@ -10,6 +10,6 @@ RMP@UCI is a rate-my-professor kind of platform that allows students to write an
 
 It is specifically designed for Chinese Students.
 
-:zap: [live on Azure](http://13.66.192.54/rmp_uci/)
+:zap: [live on Azure](http://13.66.192.54/rmp_uci/){:target="_blank"}
 
 ![review_page.PNG]({{site.baseurl}}/assets/img/review_page.PNG){:width="100%"}
