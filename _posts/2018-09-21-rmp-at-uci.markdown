@@ -2,7 +2,7 @@
 layout: post
 title: RMP@UCI
 date: '2018-09-24 14:59:09 -0700'
-categories: work
+categories: [my_works]
 published: true
 ---
 
