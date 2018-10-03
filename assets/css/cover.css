@@ -11,11 +11,6 @@ a:hover {
 }
 */
 
-.img-m {
-  max-width: 100%;
-  width: 400px;
-}
-
 a {
     color: #63c0f5;
     text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
@@ -38,17 +33,12 @@ a {
 
 html,
 body {
-
   height: 100%;
   background:#151515 url("../images/bkg.png") 0 0;
-/*
-  color:#eaeaea;
-*/
   color: #eaeaea;
   font-size:16px;
   line-height:1.5;
   font-family:Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace
-
 }
 
 body {
@@ -117,7 +107,6 @@ body {
   }
 }
 
-
 /*
  * Cover
  */
@@ -129,7 +118,6 @@ body {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
-
 
 /*
  * Footer
@@ -205,8 +193,6 @@ body {
     color:#90a959
 }
 
-
-
 header h1{
     font-size:30px;
     line-height:1.5;
@@ -256,8 +242,50 @@ pre{
     overflow-y:hidden
 }
 
-/* bs patch */
+.cover h1{
+    font-size:30px
+}
+.cover h2{
+    font-size:24px
+}
+.cover h3{
+    font-size:18px
+}
+.cover h4{
+    font-size:14px
+}
+.cover h5{
+    font-size:12px;
+    text-transform:uppercase;
+    margin:0 0 5px 0
+}
+.cover h6{
+    font-size:12px;
+    text-transform:uppercase;
+    color:#999;
+    margin:0 0 5px 0
+}
 
+dt{
+    font-style:italic;
+    font-weight:bold
+}
+ul li{
+    list-style-image:url("assets/images/bullet.png")
+}
+blockquote{
+    color:#aaa;
+    padding-left:10px;
+    border-left:1px dotted #666
+}
+hr{
+    height:0;
+    border:0;
+    border-bottom:1px dashed #b5e853;
+    color:#b5e853
+}
+
+/* bs patch */
 .card {
   background-color:#2f4060;
 }
