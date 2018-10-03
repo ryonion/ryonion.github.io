@@ -11,6 +11,6 @@ type: post
 {{content}}
 
 
-{% if page.tags and page.have_tags == true %}
+{% if page.tags and page.has_tags == true %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
