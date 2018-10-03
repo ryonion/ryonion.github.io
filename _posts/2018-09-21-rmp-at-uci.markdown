@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "RMP@UCI"
-date:   2018-09-24 14:59:09 -0700
+title: RMP@UCI
+date: '2018-09-24 14:59:09 -0700'
 categories: work
+published: true
 ---
 
 RMP@UCI is a rate-my-professor kind of platform that allows students to write and read reviews on UCI professors and courses.
 
 It is specifically designed for Chinese Students.
 
-
 :zap: [live on Azure](http://13.66.192.54/rmp_uci/)
 
+![Capture.PNG]({{site.baseurl}}/_posts/Capture.PNG)
