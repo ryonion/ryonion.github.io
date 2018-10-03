@@ -2,6 +2,7 @@
 published: true
 layout: post
 date: '2018-10-02 19:59:09 -0700'
+type: post
 categories:
   - software
   - story
