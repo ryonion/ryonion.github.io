@@ -199,6 +199,9 @@ body {
 .highlight .ss{
     color:#90a959
 }
+
+
+
 header h1{
     font-size:30px;
     line-height:1.5;
@@ -235,6 +238,17 @@ code.highlighter-rouge {
     margin: 0px -3px;
     color: #aa759f;
     border-radius: 2px;
+}
+pre{
+    background:rgba(0,0,0,0.9);
+    border:1px solid rgba(255,255,255,0.15);
+    padding:10px;
+    font-size:16px;
+    color:#b5e853;
+    border-radius:2px;
+    word-wrap:normal;
+    overflow:auto;
+    overflow-y:hidden
 }
 
 /* bs patch */
