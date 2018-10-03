@@ -11,20 +11,21 @@ Nowadays, there are tons of languages and softwares for beginners to choose when
 
 **I will only talk about what I know of.**
 
-## Game development:
+* * *
+## Game Development:
+
 Unity: whether you are just making games for fun or looking for jobs in game industry, it is the game engine you wanna begin with.
 
 I have never used it but I have done my little research...
 
-
-## web development:
+* * *
+## Web Development:
 - If you know nothing -> you may want to start from html, css, and javascript.
 You don't need to be an expert, just try to build something interesting with what you learn.
 
 - If you know a little bit html, css, javascript and want to build something with a database (i.e. a CRUD app), try PHP.
 
--------------------------------------------------------------
-below are not for beginners
+###### below are not for beginners
 
 - If you know what a little bit html, css, javascript and know how front-end interacts with back-end (by this I mean "html-javascript <-> your server app"), go for node.js, you can consider frameworks like expressjs for your nodejs apps. 
 
@@ -32,22 +33,22 @@ below are not for beginners
 
 - you want to be a full-stack web developer -> more react/react native/angular
 
-- If you know Python -> you are lucky -> Django.
+- If you know Python -> Flask/Django.
 
 - If you know Ruby -> Ruby on rails
 
-- If you know Java -> Spring MVC.
+- If you know Java -> Spring MVC (appears on job posts a lot).
 
-## a Programming language to begin with:
+* * *
+## a Programming Language to begin with:
 - I would say Python, you don't need to know much about low level stuff with Python, the syntax is beginner-friendly.
 - To become a computer scientist, c/c++, java.
 - one for all, cross-platform: Java
 
-## database
-
+* * *
+## Database (DBMS actually)
 PostgreSQL/MySQL/Redis/MongoDB
 
-## machine learning
+* * *
+## Machine Learning
 - why not python?
-
-
