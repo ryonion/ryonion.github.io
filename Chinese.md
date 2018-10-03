@@ -4,7 +4,7 @@
 
 layout: page
 cat: chinese
-title: 中文
+title: Chinese
 # theme-img: https://realitycaptureexperts.com/wp-content/uploads/2018/06/puzzle-header.jpg
 theme-img: https://i1.wp.com/www.cps1998.com/wp-content/uploads/2014/07/service-header-img.jpg
 ---
