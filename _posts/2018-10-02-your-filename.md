@@ -1,5 +1,10 @@
 ---
 published: false
+layout: post
+date: '2018-10-2 14:59:09 -0700'
+categories: stories
+tags: test
+have_tags: true
 ---
 ## A New Post
 
