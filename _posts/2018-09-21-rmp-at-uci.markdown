@@ -35,7 +35,7 @@ published: true
 * Back-end: Django framework
 * DBMS: MySQL
 * Hosting: Microsoft Azure
-* other:
+* Others:
   - nginx handles requests for my static assets
   - Gunicorn to serve my Django application
   
