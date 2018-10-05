@@ -9,10 +9,29 @@ published: true
 
 * RMP@CUCS is a review platform that allows students to write and read reviews on UCI professors and courses.
 
+***
+## Technologies/tools used:
+* Front-end: bootstrap4, jQuery (yeh I am old school.)
+* Back-end: Django framework
+* DBMS: MySQL (on Amazon EC2 ubuntu)
+* Hosting: Microsoft Azure ubuntu-16
+* version control: github
+* Others:
+  - nginx handles requests (specially for static contents)
+  - Gunicorn serves my Django application
+***
 
 * Its temporary name is "RMP@CUCS" because:
   1. I am not a creative person:flushed:  
   2. I am cooperating with students from CUCS (the largest computer science club for Chinese students in UCI) to build this website, the original data are collected by CUCS through google form surveys. Thank you CUCS!
+<br />
+<br />
+* Features:
+	0. sign-up/in/out (then redirects to the previous page you are viewing)
+	1. Create/read/update/delete reviews (typical CRUD)
+    2. Index page lists the reviews with most thumb-up's.
+    3. Clicking on the any review on index page will take you to the specific position where the review locates in a bootstrap datatable (this would be much easier to implement if I DIY pagination, but Booststrap Datatable brings great features like sorting and filtering). An animation will be shown to highlight the review you clicked.
+    4. thumb-up to recommend a post (not implemented yet)
 <br />
 <br />
 * It is specifically designed for Chinese Students who generally need more info (e.g. professor's clarity) of the professors and courses than local students do. It is in Chinese (surprise!) so that Chinese students can be more expressive when they are writing reviews. 
@@ -28,17 +47,6 @@ published: true
 
 ![review_page.PNG]({{site.baseurl}}/assets/img/review_page.PNG){:width="100%"}
 
-
-***
-## Technologies:
-* Front-end: bootstrap4, jQuery (yeh I am old school.)
-* Back-end: Django framework
-* DBMS: MySQL
-* Hosting: Microsoft Azure
-* Others:
-  - nginx handles requests for my static assets
-  - Gunicorn to serve my Django application
-  
 
 
 
