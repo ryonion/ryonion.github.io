@@ -278,13 +278,18 @@ dt{
     font-weight:bold
 }
 
-ol li {
+ul ol li {
 	list-style: decimal;
 }
 
-ul li{
+ol ul li{
     list-style-image:url("../images/bullet.png")
 }
+
+ul li{
+	list-style-image:url("../images/bullet.png")
+}
+
 blockquote{
     color:#aaa;
     padding-left:10px;
