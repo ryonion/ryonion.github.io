@@ -19,13 +19,10 @@ published: true
 * Others:
   - nginx handles requests (specially for static contents)
   - Gunicorn serves my Django application
+
+
 ***
 
-* Its temporary name is "RMP@CUCS" because:
-  1. I am not a creative person:flushed:  
-  2. I am cooperating with students from CUCS (the largest computer science club for Chinese students in UCI) to build this website, the original data are collected by CUCS through google form surveys. Thank you CUCS!
-<br />
-<br />
 * Features:
 	0. sign-up/in/out (then redirects to the previous page you are viewing)
 	1. Create/read/update/delete reviews (typical CRUD)
@@ -34,6 +31,13 @@ published: true
     4. thumb-up to recommend a post (not implemented yet)
 <br />
 <br />
+
+* Its temporary name is "RMP@CUCS" because:
+  1. I am not a creative person:flushed:  
+  2. I am cooperating with students from CUCS (the largest computer science club for Chinese students in UCI) to build this website, the original data are collected by CUCS through google form surveys. Thank you CUCS!
+<br />
+<br />
+
 * It is specifically designed for Chinese Students who generally need more info (e.g. professor's clarity) of the professors and courses than local students do. It is in Chinese (surprise!) so that Chinese students can be more expressive when they are writing reviews. 
 
 
