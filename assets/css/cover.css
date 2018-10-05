@@ -277,6 +277,11 @@ dt{
     font-style:italic;
     font-weight:bold
 }
+
+ol li {
+	list-style: decimal;
+}
+
 ul li{
     list-style-image:url("../images/bullet.png")
 }
