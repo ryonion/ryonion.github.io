@@ -8,20 +8,26 @@ published: true
 ---
 
 RMP@CUCS is a review platform that allows students to write and read reviews on UCI professors and courses.
-<br>
+
+
 Its temporary name is "RMP@CUCS" because:
  1. I am not a creative person:flushed:  
  2. I am cooperating with students from CUCS (the largest computer science club for Chinese students in UCI) to build this website, the original data are collected by CUCS through google form surveys. Thank you CUCS!
-<br>
+ 
+ 
 It is specifically designed for Chinese Students who generally need more info (e.g. professor's clarity) of the professors and courses than local students do. It is in Chinese (surprise!) so that Chinese students can be more expressive when they are writing reviews. 
-<br>
+
+
 The reviews cover lecture/discussion/lab attendance, piazza usage, difficulty, workload, grading and detailed comment on the courses/professors. It aims to help students make better decisions on which courses to take, and to maximize their learning experience.
-<br>
+
+
 I really hope this website can make a difference!
-<br>
+
+
 :zap: [live on Azure](http://13.66.192.54/rmp_uci/){:target="_blank"}
 
 ![review_page.PNG]({{site.baseurl}}/assets/img/review_page.PNG){:width="100%"}
+
 
 ***
 ## Technologies:
@@ -30,9 +36,10 @@ I really hope this website can make a difference!
 - DBMS: MySQL
 - Hosting: Microsoft Azure
 - other:
- - nginx handles requests for my static assets
- - Gunicorn to serve my Django application
-<br>
-<br>
-<br>
+  - nginx handles requests for my static assets
+  - Gunicorn to serve my Django application
+  
+
+
+
 :chicken:
