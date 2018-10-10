@@ -10,8 +10,8 @@ categories:
 
 A little app that provide basic forecast info based on city name/zip code.
 
-:cat: live on Azure
-![forecast_cat.PNG]({{site.baseurl}}/assets/img/forecast_cat.PNG)
+:cat: [live on Azure](http://13.66.192.54:8003/fc_cat/)
+![forecast_cat.PNG]({{site.baseurl}}/assets/img/forecast_cat.PNG){:width="50%"}
 
 
 
