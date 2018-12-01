@@ -49,6 +49,8 @@ published: true
 
 :zap: [live on Azure](http://13.66.192.54/rmp_uci/){:target="_blank"}
 
+:neutral_face: [I am using my domain now, finally.](http://www.oset.info/rmp_uci/){:target="_blank"}
+
 ![review_page.PNG]({{site.baseurl}}/assets/img/review_page.PNG){:width="100%"}
 
 
