@@ -15,7 +15,7 @@ published: true
 * Back-end: Django framework
 * DBMS: MySQL (on Amazon EC2 ubuntu)
 * Hosting: Microsoft Azure ubuntu-16
-* version control: github
+* version control: github   
 * Others:
   - nginx handles requests (specially for static contents)
   - Gunicorn serves my Django application
@@ -49,7 +49,7 @@ published: true
 
 :zap: [live on Azure](http://13.66.192.54/rmp_uci/){:target="_blank"}
 
-:neutral_face: [I am using my domain now, finally.](http://www.oset.info/rmp_uci/){:target="_blank"}
+:neutral_face: [I am using my domain now, finally. - http://www.oset.info/rmp_uci/](http://www.oset.info/rmp_uci/){:target="_blank"}
 
 ![review_page.PNG]({{site.baseurl}}/assets/img/review_page.PNG){:width="100%"}
 
