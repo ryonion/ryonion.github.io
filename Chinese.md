@@ -2,7 +2,7 @@
 layout: page
 cat: chinese
 title: Chinese
-theme-img: 'https://ryonion.github.io/assets/img/forecast_cat.PNG'
+theme-img: 'https://ryonion.github.io/assets/img/Cloud_banner.jpg'
 published: true
 ---
 
