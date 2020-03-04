@@ -1,5 +1,14 @@
 ---
-published: false
+published: true
+layout: post
+date: '2020-03-03 19:59:09 -0700'
+type: post
+categories:
+  - WebDev
+has_tags: true
+tags:
+  - blazor
+  - web dev
 ---
 I have been developing a project at work with Blazor lately.
 
@@ -30,5 +39,3 @@ But Blazor and React makes updating a small piece (e.g. a counter) of info on yo
 - You hate Javascript and want to build frontend with c# and HTML
 
 To be Continued.
-
-
