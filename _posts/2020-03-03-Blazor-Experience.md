@@ -15,10 +15,10 @@ I have been developing a project at work with Blazor lately.
 
 Although it has been out there for quite a while, I think there aren't many people familiar with it. Neither do I!
 
-'''So what is Blazor?'''
-To me it's just another tool to build apps.
+###So what is Blazor?###
+To me it's just another tool to build apps. 
 
-'''Blazor VS Razor'''
+###Blazor VS Razor###
 
 I am talking about Server-Side Blazor here. Google if your are interested in Client-Side Blazor. 
 
@@ -32,11 +32,12 @@ Template engines like Razor pages and Django templates are good for dynamically 
 
 But Blazor and React makes updating a small piece (e.g. a counter) of info on your page more elegant and interesting. Interactions within your website becomes smooth with the help of them.
 
-'''Who should learn Blazor'''
+###Who should learn Blazor?###
 - Prerequsites are C# and .net core framework.
 - Definetely not somebody who is new to coding or web developing.
 - You need to be super patient if you are teaching yourself
 - Your boss wants you to
 - You hate Javascript and want to build frontend with c# and HTML
+- If you happen to be a Trail Blazers fan who also loves programming.
 
 To be Continued.
