@@ -10,4 +10,4 @@ tags:
   - 2k14
   - nba
 ---
-![2k14.PNG]({{site.baseurl}}/assets/img/2k14.png){:width="50%"}
+![2k14.PNG]({{site.baseurl}}/assets/img/2k14.png){:width="100%"}
