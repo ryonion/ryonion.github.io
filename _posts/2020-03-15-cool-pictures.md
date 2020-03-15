@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 date: '2020-03-15 12:30:09 -0700'
 type: post
@@ -11,6 +11,3 @@ tags:
   - nba
 ---
 ![2k14.png]({{site.baseurl}}/_posts/2k14.png)
-
-
-
