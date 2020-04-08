@@ -70,6 +70,7 @@
         var pandaWithAnswer;
         var canAction = false;
         var gameOver = false;
+        var speedbase = 4;
 
         function musicPlay() {
             document.getElementById('bgMusic').play();
@@ -78,10 +79,12 @@
 
         function StopMusic() {
             document.getElementById('bgMusic').pause();
+            document.getElementById('attack').muted = true;
         }
 
         function PlayMusic() {
             document.getElementById('bgMusic').play();
+            document.getElementById('attack').muted = false;
         }
 
         function StartGame() {
@@ -89,13 +92,27 @@
             ResetGame();
         }
 
+        function PlayAttackSound() {
+            document.getElementById('attack').play();
+        }
+
         function SetScore(score) {
             $("#point").text(score);
+        }
+
+        function SetSpeed(score) {
+            speedbase = Math.floor(Math.log10(score));
+        }
+
+        function CorrectedSpeed() {
+            //console.log(4000 - 250 * speedbase);
+            return 4000 - 250 * speedbase;
         }
 
         function UpdateScore(score) {
             var currentScore = parseInt($("#point").text());
             $("#point").text(currentScore + score);
+            SetSpeed(currentScore + score);
 
             if (parseInt(currentScore + score) <= 0) {
                 GameOver();
@@ -108,9 +125,8 @@
 
         $(document).ready(function () {
             MODE = 0;
-            TOTAL = 5;
-
             SetKanaPairs();
+            TOTAL = KANA_DICT.length;
             SetQuestion();
 
             $('.panda').animate({ 'top': '21%' }, 4000, function () {
@@ -121,6 +137,7 @@
             $('.panda').hover(function () {
 
                 if (canAction && !gameOver) {
+                    PlayAttackSound();
                     canAction = false;
                     // $(this).css('background-image', 'url(hurt.png)');
                     if (IsCorrect($(this).attr('id'))) {
@@ -130,7 +147,7 @@
                         $('.panda').stop().animate({ 'top': '100%' }, 300, function () {
                             // $(this).css('background-image', 'url(panda.png)');
                             canAction = true;
-                            $(this).animate({ 'top': '21%' }, 4000, function () {
+                            $(this).animate({ 'top': '21%' }, CorrectedSpeed(), function () {
                                 UpdateScore(-1);
                                 shake($(document.body).get(0));
                             });
@@ -141,7 +158,7 @@
                         $(this).stop().animate({ 'top': '100%' }, 1000, function () {
                             $(this).children().last().children().first().attr('src', 'img/panda.png');
                             canAction = true;
-                            $(this).animate({ 'top': '21%' }, 4000, function () {
+                            $(this).animate({ 'top': '21%' }, CorrectedSpeed(), function () {
                                 UpdateScore(-1);
                                 shake($(document.body).get(0));
                             });
@@ -161,6 +178,7 @@
             SetScore(0);
             canAction = true;
             gameOver = false;
+            speed = 0;
             $("#instruction").text("Pick the corresponding Hiragana/Katakana !");
 
             $(".panda").stop().animate({ 'top': '100%' }, 300, function () {
@@ -180,7 +198,10 @@
 
         function SetKanaPairs() {
             KANA_DICT = [["あ", "ア"], ["い", "イ"], ["う", "ウ"], ["え", "エ"], ["お", "オ"], ["か", "カ"], ["き", "キ"], ["く", "ク"], ["け", "ケ"], ["こ", "コ"],
-            ["さ", "サ"], ["し", "シ"], ["す", "ス"], ["せ", "セ"], ["そ", "ソ"]];
+            ["さ", "サ"], ["し", "シ"], ["す", "ス"], ["せ", "セ"], ["そ", "ソ"], ["ま", "マ"], ["み", "ミ"], ["む", "ム"], ["め", "メ"], ["も", "モ"],
+            ["ら", "ラ"], ["り", "リ"], ["る", "ル"], ["れ", "レ"], ["ろ", "ロ"], ["た", "タ"], ["ち", "チ"], ["つ", "ツ"], ["て", "テ"], ["と", "ト"],
+            ["な", "ナ"], ["に", "ニ"], ["ぬ", "ヌ"], ["ね", "ネ"], ["の", "ノ"], ["は", "ハ"], ["ひ", "ヒ"], ["ふ", "フ"], ["へ", "ヘ"], ["ほ", "ホ"],
+            ["や", "ヤ"], ["ゆ", "ユ"], ["よ", "ヨ"], ["わ", "ワ"], ["を", "ヲ"], ["ん", "ン"]];
         }
 
         function GetRandomInt(min, max) {
@@ -345,6 +366,7 @@
                 <audio id="bgMusic" src="media/bg.mp3" autoplay loop>
                     <p>If you are reading this, it is because your browser does not support the audio element.</p>
                 </audio>
+                <audio id="attack" src="media/swosh-01.flac"></audio>
                 <button onClick="StartGame()">Start</button>
                 <button onClick="PlayMusic()">Play Music</button>
                 <button onClick="StopMusic()">Mute</button>
@@ -360,7 +382,7 @@
         </div>
     </div>
     <div id="pave"
-        style="width: 100%; height: 80%; min-width: 322px; background-image: url('img/bg.png'); background-repeat: no-repeat;">
+        style="width: 100%; height: 80%; min-width: 322px; background-image: url('img/bg.png'); background-repeat: no-repeat; background-size: cover;">
         <div class="panda" id="panda1">
             <div class="left_ear"></div>
             <div class="right_ear"></div>
