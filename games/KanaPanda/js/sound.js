@@ -3,31 +3,32 @@
 var SoundControl = function () {
     var bg = new Audio("media/bg.mp3");
     bg.loop = true;
-    var touch = new Audio("media/swosh-01.wav");
+    //var touch = new Audio("media/swosh-01.wav");
     var explosion = new Audio("media/swosh-01.wav");
 
     function StopMusic() {
         bg.pause();
-        touch.muted = true;
+        //touch.muted = true;
     }
 
     function PlayMusic() {
         bg.play();
-        touch.muted = false;
+        //touch.muted = false;
         explosion.muted = false;
     }
 
     function PlayAttackSound() {
-        touch.play();
+        //touch.play();
     }
 
     function PandaHit() {
-        //explosion.play();
+        //touch.play();
+        explosion.play();
     }
 
     function MuteEverything() {
         bg.pause();
-        touch.muted = true;
+        //touch.muted = true;
         explosion.muted = true;
     }
 
