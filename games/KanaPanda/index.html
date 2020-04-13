@@ -70,9 +70,17 @@
 
             });
 
-            var clickEventType = (document.ontouchstart !== null && document.ontouchstart !== undefined) ? 'click touchstart' : 'mouseover';
-            $("#debug").text("click touchstart");
-            $('.panda').on("click touchstart", function () {
+            var clickEventType;
+            if (helper.IsMobileDevice()) {
+                $("#debug").text("Mobile");
+                clickEventType = "click touchstart";
+            } else {
+                $("#debug").text("Desktop");
+                clickEventType = "mouseover";
+            }
+
+
+            $('.panda').on(clickEventType, function () {
                 if (canAction && !gameOver) {
                     soundControl.PlayAttackSound();
                     canAction = false;
