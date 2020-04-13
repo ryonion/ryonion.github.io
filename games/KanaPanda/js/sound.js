@@ -22,7 +22,7 @@ var SoundControl = function () {
     }
 
     function PandaHit() {
-        explosion.play();
+        //explosion.play();
     }
 
     function MuteEverything() {
