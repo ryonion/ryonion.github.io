@@ -1,0 +1,1 @@
+![demo image](https://github.com/ryonion/KanaPanda/blob/master/img/kanapanda%20demo.png)

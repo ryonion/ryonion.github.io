@@ -1,66 +1,13 @@
 <html>
 
 <head>
-    <style>
-        body {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-
-        .panda {
-            background-color: rgb(255, 255, 255);
-            border-color: black;
-            border-radius: 80px;
-            border: black 1px solid;
-            height: auto;
-            width: 10%;
-            position: absolute;
-            top: 100%;
-        }
-
-        .left_ear {
-            background-color: black;
-            border-radius: 100px;
-            position: absolute;
-            float: left;
-            min-width: 30%;
-            padding-top: 30%;
-            z-index: 1;
-        }
-
-        .right_ear {
-            background-color: black;
-            border-radius: 100px;
-            position: absolute;
-            float: right;
-            min-width: 30%;
-            padding-top: 30%;
-            left: 70%;
-            z-index: 1;
-        }
-
-        #panda1 {
-            float: left;
-            left: 10%;
-            z-index: 2;
-        }
-
-        #panda2 {
-            float: left;
-            left: 45%;
-            z-index: 2;
-        }
-
-        #panda3 {
-            float: left;
-            left: 80%;
-            z-index: 2;
-        }
-    </style>
-
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/shake.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/gameControl.js"></script>
+    <script src="js/helpers.js"></script>
+
     <script>
         var KANA_DICT;
         var MODE;
@@ -71,36 +18,22 @@
         var canAction = false;
         var gameOver = false;
         var speedbase = 4;
-
-        function musicPlay() {
-            document.getElementById('bgMusic').play();
-            document.removeEventListener('click', musicPlay);
-        }
-
-        function StopMusic() {
-            document.getElementById('bgMusic').pause();
-            document.getElementById('attack').muted = true;
-        }
-
-        function PlayMusic() {
-            document.getElementById('bgMusic').play();
-            document.getElementById('attack').muted = false;
-        }
-
-        function StartGame() {
-            PlayMusic();
-            ResetGame();
-        }
-
-        function PlayAttackSound() {
-            document.getElementById('attack').play();
-        }
+        var gameControl = new GameControl();
+        var soundControl = new SoundControl();
+        var helper = new Helper();
 
         function SetScore(score) {
             $("#point").text(score);
         }
 
+        function SetMode(score) {
+            MODE = (score % 5) == 0 ? 1 : 0; // if score is multiple of 5, question becomes Katakana
+        }
+
         function SetSpeed(score) {
+            if (score <= 0) {
+                score = 1;
+            }
             speedbase = Math.floor(Math.log10(score));
         }
 
@@ -110,12 +43,15 @@
         }
 
         function UpdateScore(score) {
-            var currentScore = parseInt($("#point").text());
-            $("#point").text(currentScore + score);
-            SetSpeed(currentScore + score);
+            var prevScore = parseInt($("#point").text());
+            var newScore = prevScore + score;
 
-            if (parseInt(currentScore + score) <= 0) {
-                GameOver();
+            $("#point").text(newScore);
+            SetSpeed(newScore);
+            SetMode(newScore);
+
+            if (parseInt(prevScore + score) <= 0) {
+                gameControl.GameOver();
             }
         }
 
@@ -137,7 +73,7 @@
             $('.panda').hover(function () {
 
                 if (canAction && !gameOver) {
-                    PlayAttackSound();
+                    soundControl.PlayAttackSound();
                     canAction = false;
                     // $(this).css('background-image', 'url(hurt.png)');
                     if (IsCorrect($(this).attr('id'))) {
@@ -147,10 +83,7 @@
                         $('.panda').stop().animate({ 'top': '100%' }, 300, function () {
                             // $(this).css('background-image', 'url(panda.png)');
                             canAction = true;
-                            $(this).animate({ 'top': '21%' }, CorrectedSpeed(), function () {
-                                UpdateScore(-1);
-                                shake($(document.body).get(0));
-                            });
+                            MoveUp(this);
                         });
                     } else {
                         UpdateScore(-1);
@@ -158,34 +91,18 @@
                         $(this).stop().animate({ 'top': '100%' }, 1000, function () {
                             $(this).children().last().children().first().attr('src', 'img/panda.png');
                             canAction = true;
-                            $(this).animate({ 'top': '21%' }, CorrectedSpeed(), function () {
-                                UpdateScore(-1);
-                                shake($(document.body).get(0));
-                            });
+                            MoveUp(this);
                         });
                     }
                 }
             });
         });
 
-        function GameOver() {
-            canAction = false;
-            gameOver = true;
-            $("#instruction").text("Game Over.");
-        }
-
-        function ResetGame() {
-            SetScore(0);
-            canAction = true;
-            gameOver = false;
-            speed = 0;
-            $("#instruction").text("Pick the corresponding Hiragana/Katakana !");
-
-            $(".panda").stop().animate({ 'top': '100%' }, 300, function () {
-                // $(this).css('background-image', 'url(panda.png)');
-                $(this).animate({ 'top': '21%' }, 4000, function () {
-                    shake($(document.body).get(0));
-                });
+        function MoveUp(obj) {
+            $(obj).animate({ 'top': '21%' }, CorrectedSpeed(), function () {
+                UpdateScore(-1);
+                soundControl.PandaHit();
+                shake($(document.body).get(0));
             });
         }
 
@@ -204,17 +121,13 @@
             ["や", "ヤ"], ["ゆ", "ユ"], ["よ", "ヨ"], ["わ", "ワ"], ["を", "ヲ"], ["ん", "ン"]];
         }
 
-        function GetRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
         function GetRandomPairIdx() {
-            return GetRandomInt(0, TOTAL - 1);
+            return helper.GetRandomInt(0, TOTAL - 1);
         }
 
         function SetPandas(questionPairIdx) {
             let pandaArr = [1, 2, 3];
-            let answerPandaNum = GetRandomInt(1, 3);
+            let answerPandaNum = helper.GetRandomInt(1, 3);
             pandaWithAnswer = answerPandaNum;
 
             let pairIdxForSecondPanda;
@@ -243,120 +156,6 @@
         }
 
     </script>
-
-    <script>
-        var shakingElements = [];
-
-        var shake = function (element, magnitude = 16, angular = false) {
-            //First set the initial tilt angle to the right (+1) 
-            var tiltAngle = 1;
-
-            //A counter to count the number of shakes
-            var counter = 1;
-
-            //The total number of shakes (there will be 1 shake per frame)
-            var numberOfShakes = 15;
-
-            //Capture the element's position and angle so you can
-            //restore them after the shaking has finished
-            var startX = 0,
-                startY = 0,
-                startAngle = 0;
-
-            // Divide the magnitude into 10 units so that you can 
-            // reduce the amount of shake by 10 percent each frame
-            var magnitudeUnit = magnitude / numberOfShakes;
-
-            //The `randomInt` helper function
-            var randomInt = (min, max) => {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            };
-
-            //Add the element to the `shakingElements` array if it
-            //isn't already there
-            if (shakingElements.indexOf(element) === -1) {
-                //console.log("added")
-                shakingElements.push(element);
-
-                //Add an `updateShake` method to the element.
-                //The `updateShake` method will be called each frame
-                //in the game loop. The shake effect type can be either
-                //up and down (x/y shaking) or angular (rotational shaking).
-                if (angular) {
-                    angularShake();
-                } else {
-                    upAndDownShake();
-                }
-            }
-
-            //The `upAndDownShake` function
-            function upAndDownShake() {
-
-                //Shake the element while the `counter` is less than 
-                //the `numberOfShakes`
-                if (counter < numberOfShakes) {
-
-                    //Reset the element's position at the start of each shake
-                    element.style.transform = 'translate(' + startX + 'px, ' + startY + 'px)';
-
-                    //Reduce the magnitude
-                    magnitude -= magnitudeUnit;
-
-                    //Randomly change the element's position
-                    var randomX = randomInt(-magnitude, magnitude);
-                    var randomY = randomInt(-magnitude, magnitude);
-
-                    element.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
-
-                    //Add 1 to the counter
-                    counter += 1;
-
-                    requestAnimationFrame(upAndDownShake);
-                }
-
-                //When the shaking is finished, restore the element to its original 
-                //position and remove it from the `shakingElements` array
-                if (counter >= numberOfShakes) {
-                    element.style.transform = 'translate(' + startX + ', ' + startY + ')';
-                    shakingElements.splice(shakingElements.indexOf(element), 1);
-                }
-            }
-
-            //The `angularShake` function
-            function angularShake() {
-                if (counter < numberOfShakes) {
-                    console.log(tiltAngle);
-                    //Reset the element's rotation
-                    element.style.transform = 'rotate(' + startAngle + 'deg)';
-
-                    //Reduce the magnitude
-                    magnitude -= magnitudeUnit;
-
-                    //Rotate the element left or right, depending on the direction,
-                    //by an amount in radians that matches the magnitude
-                    var angle = Number(magnitude * tiltAngle).toFixed(2);
-                    console.log(angle);
-                    element.style.transform = 'rotate(' + angle + 'deg)';
-                    counter += 1;
-
-                    //Reverse the tilt angle so that the element is tilted
-                    //in the opposite direction for the next shake
-                    tiltAngle *= -1;
-
-                    requestAnimationFrame(angularShake);
-                }
-
-                //When the shaking is finished, reset the element's angle and
-                //remove it from the `shakingElements` array
-                if (counter >= numberOfShakes) {
-                    element.style.transform = 'rotate(' + startAngle + 'deg)';
-                    shakingElements.splice(shakingElements.indexOf(element), 1);
-                    //console.log("removed")
-                }
-            }
-
-        };
-    </script>
 </head>
 
 <body>
@@ -367,9 +166,10 @@
                     <p>If you are reading this, it is because your browser does not support the audio element.</p>
                 </audio>
                 <audio id="attack" src="media/swosh-01.flac"></audio>
-                <button onClick="StartGame()">Start</button>
-                <button onClick="PlayMusic()">Play Music</button>
-                <button onClick="StopMusic()">Mute</button>
+                <audio id="explosion" src="media/explosion09.wav"></audio>
+                <button onClick="gameControl.StartGame()">Start</button>
+                <button onClick="soundControl.PlayMusic()">Play Music</button>
+                <button onClick="soundControl.StopMusic()">Mute</button>
             </div>
             <div id="score" style="height: 70%; float: right; margin-right: 20px; display: flex; align-items:center;">
                 <img width="50px" src="img/bamboo.png" alt="">
@@ -381,7 +181,7 @@
             <h5 id="instruction" style="text-align: center;">Pick the corresponding Hiragana/Katakana !</h5>
         </div>
     </div>
-    <div id="pave"
+    <div
         style="width: 100%; height: 80%; min-width: 322px; background-image: url('img/bg.png'); background-repeat: no-repeat; background-size: cover;">
         <div class="panda" id="panda1">
             <div class="left_ear"></div>
