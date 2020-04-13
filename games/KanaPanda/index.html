@@ -72,7 +72,7 @@
 
             var clickEventType = (document.ontouchstart !== null && document.ontouchstart !== undefined) ? 'touchstart' : 'mouseover';
 
-            $('.panda').on("mouseover", function () {
+            $('.panda').on(clickEventType, function () {
                 if (canAction && !gameOver) {
                     soundControl.PlayAttackSound();
                     canAction = false;
