@@ -74,7 +74,7 @@
             $("#debug").text("click touchstart");
             $('.panda').on("click touchstart", function () {
                 if (canAction && !gameOver) {
-                    soundControl.PlayAttackSound();
+                    //soundControl.PlayAttackSound();
                     canAction = false;
                     // $(this).css('background-image', 'url(hurt.png)');
                     if (IsCorrect($(this).attr('id'))) {
@@ -102,7 +102,7 @@
         function MoveUp(obj) {
             $(obj).animate({ 'top': '21%' }, CorrectedSpeed(), function () {
                 UpdateScore(-1);
-                soundControl.PandaHit();
+                //soundControl.PandaHit();
                 shake($(document.body).get(0));
             });
         }
@@ -166,7 +166,7 @@
                 <audio id="bgMusic" src="media/bg.mp3" autoplay loop>
                     <p>If you are reading this, it is because your browser does not support the audio element.</p>
                 </audio>
-                <audio id="attack" src="media/swosh-01.flac"></audio>
+                <audio id="attack" src="media/swosh-01.wav"></audio>
                 <audio id="explosion" src="media/explosion09.wav"></audio>
                 <button style="width: 30%; min-width: 50px; height: 40px;"
                     onClick="gameControl.StartGame()">Start</button>
