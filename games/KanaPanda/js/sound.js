@@ -4,7 +4,6 @@ var SoundControl = function () {
     function StopMusic() {
         document.getElementById('bgMusic').pause();
         document.getElementById('attack').muted = true;
-        document.getElementById('explosion').muted = true;
     }
 
     function PlayMusic() {

@@ -70,7 +70,7 @@
 
             });
 
-            $('.panda').hover(function () {
+            $('.panda').on("touchenter mouseover", function () {
 
                 if (canAction && !gameOver) {
                     soundControl.PlayAttackSound();
