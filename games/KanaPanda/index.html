@@ -71,8 +71,8 @@
             });
 
             var clickEventType = (document.ontouchstart !== null && document.ontouchstart !== undefined) ? 'click touchstart' : 'mouseover';
-            $("#debug").text(clickEventType);
-            $('.panda').on(clickEventType, function () {
+            $("#debug").text("click touchstart");
+            $('.panda').on("click touchstart", function () {
                 if (canAction && !gameOver) {
                     soundControl.PlayAttackSound();
                     canAction = false;
@@ -168,9 +168,12 @@
                 </audio>
                 <audio id="attack" src="media/swosh-01.flac"></audio>
                 <audio id="explosion" src="media/explosion09.wav"></audio>
-                <button style="width: 30%; min-width: 50px;" onClick="gameControl.StartGame()">Start</button>
-                <button style="width: 30%; min-width: 50px;" onClick="soundControl.PlayMusic()">Play Music</button>
-                <button style="width: 30%; min-width: 50px;" onClick="soundControl.MuteEverything()">Mute</button>
+                <button style="width: 30%; min-width: 50px; height: 40px;"
+                    onClick="gameControl.StartGame()">Start</button>
+                <button style="width: 30%; min-width: 50px; height: 40px;" onClick="soundControl.PlayMusic()">Play
+                    Music</button>
+                <button style="width: 30%; min-width: 50px; height: 40px;"
+                    onClick="soundControl.MuteEverything()">Mute</button>
             </div>
             <div id="score" style="height: 70%; float: right; margin-right: 20px; display: flex; align-items:center;">
                 <span id="debug"></span>
