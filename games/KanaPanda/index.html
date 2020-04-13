@@ -70,9 +70,9 @@
 
             });
 
-            var clickEventType = (document.ontouchstart !== null) ? 'touchstart' : 'mousedown';
+            var clickEventType = (document.ontouchstart !== null && document.ontouchstart !== undefined) ? 'touchstart' : 'mouseover';
 
-            $('.panda').on(clickEventType, function () {
+            $('.panda').on("mouseover", function () {
                 if (canAction && !gameOver) {
                     soundControl.PlayAttackSound();
                     canAction = false;
