@@ -70,7 +70,7 @@
 
             });
 
-            var clickEventType = ((document.ontouchstart !== null) ? 'mousedown' : 'touchstart');
+            var clickEventType = (document.ontouchstart !== null) ? 'touchstart' : 'mousedown';
 
             $('.panda').on(clickEventType, function () {
                 if (canAction && !gameOver) {
