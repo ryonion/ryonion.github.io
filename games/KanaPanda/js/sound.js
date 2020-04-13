@@ -13,10 +13,12 @@ var SoundControl = function () {
     }
 
     function PlayAttackSound() {
+        document.getElementById('attack').load();
         document.getElementById('attack').play();
     }
 
     function PandaHit() {
+        document.getElementById('explosion').load();
         document.getElementById('explosion').play();
     }
 
