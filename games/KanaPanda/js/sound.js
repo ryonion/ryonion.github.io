@@ -9,6 +9,7 @@ var SoundControl = function () {
     function PlayMusic() {
         document.getElementById('bgMusic').play();
         document.getElementById('attack').muted = false;
+        document.getElementById('explosion').muted = false;
     }
 
     function PlayAttackSound() {
@@ -19,11 +20,18 @@ var SoundControl = function () {
         document.getElementById('explosion').play();
     }
 
+    function MuteEverything() {
+        document.getElementById('bgMusic').pause();
+        document.getElementById('attack').muted = true;
+        document.getElementById('explosion').muted = true;
+    }
+
     return {
         StopMusic: StopMusic,
         PlayMusic: PlayMusic,
         PlayAttackSound: PlayAttackSound,
-        PandaHit: PandaHit
+        PandaHit: PandaHit,
+        MuteEverything: MuteEverything
     }
 };
 
