@@ -4,7 +4,7 @@ var SoundControl = function () {
     var bg = new Audio("media/bg.mp3");
     bg.loop = true;
     var touch = new Audio("media/swosh-01.wav");
-    var explosion = new Audio("media/explosion.mp3");
+    var explosion = new Audio("media/swosh-01.wav");
 
     function StopMusic() {
         bg.pause();
