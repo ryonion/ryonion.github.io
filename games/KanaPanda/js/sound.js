@@ -1,31 +1,34 @@
 
 
 var SoundControl = function () {
+    var bg = new Audio("media/bg.mp3");
+    bg.loop = true;
+    var touch = new Audio("media/swosh-01.wav");
+    var explosion = new Audio("media/explosion09.wav");
+
     function StopMusic() {
-        document.getElementById('bgMusic').pause();
-        document.getElementById('attack').muted = true;
+        bg.pause();
+        touch.muted = true;
     }
 
     function PlayMusic() {
-        document.getElementById('bgMusic').play();
-        document.getElementById('attack').muted = false;
-        document.getElementById('explosion').muted = false;
+        bg.play();
+        touch.muted = false;
+        explosion.muted = false;
     }
 
     function PlayAttackSound() {
-        document.getElementById('attack').load();
-        document.getElementById('attack').play();
+        touch.play();
     }
 
     function PandaHit() {
-        document.getElementById('explosion').load();
-        document.getElementById('explosion').play();
+        explosion.play();
     }
 
     function MuteEverything() {
-        document.getElementById('bgMusic').pause();
-        document.getElementById('attack').muted = true;
-        document.getElementById('explosion').muted = true;
+        bg.pause();
+        touch.muted = true;
+        explosion.muted = true;
     }
 
     return {
