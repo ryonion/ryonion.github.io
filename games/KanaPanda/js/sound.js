@@ -1,35 +1,80 @@
 
 
 var SoundControl = function () {
-    var bg = new Audio("media/bg.mp3");
-    bg.loop = true;
-    //var touch = new Audio("media/swosh-01.wav");
-    var explosion = new Audio("media/swosh-01.wav");
 
     function StopMusic() {
-        bg.pause();
-        //touch.muted = true;
+        ToggleMusic("bg-music", false);
     }
 
     function PlayMusic() {
-        bg.play();
-        //touch.muted = false;
-        explosion.muted = false;
+        var target = document.getElementById("bg-music");
+        if (!target.muted) {
+            ToggleMusic("bg-music", true);
+        }
+    }
+
+    function ToggleMusic(targetId, turnOn) {
+        var target = document.getElementById(targetId);
+        var isPlaying = !target.paused;
+
+        if (turnOn != true && turnOn != false) {
+            if (isPlaying) {
+                target.pause();
+            } else {
+                target.play();
+            }
+        }
+        else if (turnOn) {
+            if (!isPlaying) {
+                target.play();
+            }
+        }
+        else // turnOn == false
+        {
+            if (isPlaying) {
+                target.pause();
+            }
+        }
+    }
+
+    function ToggleSound(targetId, turnOn) {
+        var target = document.getElementById(targetId);
+        var isOn = !target.muted;
+
+        if (turnOn != true && turnOn != false) {
+            target.muted = !target.muted;
+        }
+        else if (turnOn) {
+            if (!isOn) {
+                target.muted = false;
+            }
+        }
+        else // turnOn == false
+        {
+            if (isOn) {
+                target.muted = true;
+            }
+        }
+    }
+
+    function ToggleBGMusic(turnOn) {
+        ToggleSound("bg-music", turnOn);
+    }
+
+    function ToggleAllSounds(turnOn) {
+        ToggleSound('touch', turnOn);
+        ToggleSound('explosion', turnOn);
     }
 
     function PlayAttackSound() {
-        //touch.play();
+        //document.getElementById("touch").load();
+        document.getElementById("touch").play();
     }
 
     function PandaHit() {
-        //touch.play();
-        explosion.play();
-    }
-
-    function MuteEverything() {
-        bg.pause();
-        //touch.muted = true;
-        explosion.muted = true;
+        //document.getElementById("explosion").load();
+        console.log("pandahit")
+        document.getElementById("explosion").play();
     }
 
     return {
@@ -37,7 +82,8 @@ var SoundControl = function () {
         PlayMusic: PlayMusic,
         PlayAttackSound: PlayAttackSound,
         PandaHit: PandaHit,
-        MuteEverything: MuteEverything
+        ToggleBGMusic: ToggleBGMusic,
+        ToggleAllSounds: ToggleAllSounds
     }
 };
 

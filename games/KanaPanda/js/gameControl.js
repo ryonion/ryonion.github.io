@@ -18,12 +18,12 @@ var GameControl = function () {
         SetScore(0);
         canAction = true;
         gameOver = false;
-        speed = 0;
         $("#instruction").text("Pick the corresponding Hiragana/Katakana !");
 
         $(".panda").stop().animate({ 'top': '100%' }, 300, function () {
-            // $(this).css('background-image', 'url(panda.png)');
             $(this).animate({ 'top': '21%' }, 4000, function () {
+                UpdateScore(-1);
+                soundControl.PandaHit();
                 shake($(document.body).get(0));
             });
         });

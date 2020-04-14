@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/shake.js"></script>
     <script src="js/sound.js"></script>
@@ -72,8 +73,6 @@
             SetQuestion();
 
             $('.panda').animate({ 'top': '21%' }, 4000, function () {
-                shake($(document.body).get(0));
-
             });
 
             var clickEventType;
@@ -175,15 +174,22 @@
 </head>
 
 <body>
+    <audio id="bg-music" src="media/bg.mp3" autoplay loop>
+        <p>If you are reading this, it is because your browser does not support the audio element.</p>
+    </audio>
+    <audio id="touch" src="media/swosh-01.wav"></audio>
+    <audio id="explosion" src="media/explosion.mp3"></audio>
+
     <div style="width: 100%; height: 20%; background-color: burlywood;">
         <div id="navi" style="height: 30%; width: 100%;">
             <div id="leftPanel" style="width: 50%; float: left; ">
                 <button style="width: 30%; min-width: 50px; height: 40px;"
                     onClick="gameControl.StartGame()">Start</button>
-                <button style="width: 30%; min-width: 50px; height: 40px;" onClick="soundControl.PlayMusic()">Play
-                    Music</button>
-                <button style="width: 30%; min-width: 50px; height: 40px;"
-                    onClick="soundControl.MuteEverything()">Mute</button>
+                <button style="width: 30%; min-width: 50px; height: 40px;" id="bg-music-btn"
+                    onClick="soundControl.ToggleBGMusic()">
+                    Music ON/OFF</button>
+                <button style="width: 30%; min-width: 50px; height: 40px;" id="sound-effect-btn"
+                    onClick="soundControl.ToggleAllSounds()">Sound ON/OFF</button>
             </div>
             <div id="score" style="height: 70%; float: right; margin-right: 20px; display: flex; align-items:center;">
                 <span id="version"></span>
