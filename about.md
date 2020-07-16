@@ -3,7 +3,9 @@ layout: page
 title: about
 permalink: /about/
 cat: about
-theme-img: https://sensiblysprouted.com/wp-content/uploads/2018/05/time-long.png
+theme-img: >-
+  https://ryonion.github.io/assets/img/high-tech-futuristic-lines-technology-banner_1017-23966.jpg
+published: true
 ---
 
 My name is Ryan Zhang.<br>
