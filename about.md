@@ -15,10 +15,4 @@ I'd like to call myself a software engineer because I understand what's going on
 
 I am enthusiastic about coding. One of the reason is that you can build exciting things with just a computer. (A laptop makes it even more magical.) It is kinda like singing. You can make different noises with just your voice. You get what I mean. It's such an elegant way to create things!
 
-I believe in Minimalism. I try to make my life simpler so I can focus on something I enjoy doing. Minimalism is a good practice for programming too because most of the time more code leads to more bugs.
-
-
-
-
-
-
+I believe in Minimalism. I try to make my life simpler so I can focus on things I truly enjoy doing. Minimalism is a good practice for programming too because most of the time more code leads to more bugs.
