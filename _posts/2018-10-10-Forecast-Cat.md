@@ -8,7 +8,7 @@ categories:
 ---
 
 
-A little app that provide basic forecast info based on addresses.
+An Django app that provides basic forecast info based on addresses.
 
 ![forecast_cat.PNG]({{site.baseurl}}/assets/img/forecast_cat.PNG){:width="50%"}
 
