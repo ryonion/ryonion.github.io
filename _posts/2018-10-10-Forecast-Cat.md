@@ -10,9 +10,6 @@ categories:
 
 A little app that provide basic forecast info based on addresses.
 
-:cat: [live on Azure](http://weather.oset.info/)
-
-
 ![forecast_cat.PNG]({{site.baseurl}}/assets/img/forecast_cat.PNG){:width="50%"}
 
 
