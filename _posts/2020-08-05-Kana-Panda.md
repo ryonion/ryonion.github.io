@@ -11,4 +11,4 @@ Inspired by [this video](https://www.youtube.com/watch?v=B4jGVBz7P9M&list=WL&ind
 
 :zap: Play [here](https://ryonion.github.io/games/KanaPanda/)
 
-![kanapanda.PNG]({{site.baseurl}}/assets/img/kanapanda.PNG){:width="100%"}
+![kanapanda.PNG]({{site.baseurl}}/assets/img/kanapanda.png){:width="100%"}
